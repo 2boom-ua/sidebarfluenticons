@@ -1,6 +1,12 @@
+<div align="center">  
+    <img src="https://github.com/2boom-ua/sidebarfluenticons/blob/main/icons/icon_128.png?raw=true" alt="" width="128" height="128">
+</div>
+
 # Fluent System Icons Viewer
 
-A lightweight Chrome extension that lets you browse, search, copy, and download [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons) directly from a browser side panel.
+![Version](https://img.shields.io/badge/version-1.0-green.svg)
+
+A lightweight Chrome/Edge extension that lets you browse, search, copy, and download [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons) directly from a browser side panel.
 
 ## Features
 
@@ -21,7 +27,11 @@ A lightweight Chrome extension that lets you browse, search, copy, and download 
 - At runtime, the side panel (`sidepanel.js`) loads this local index and streams the actual SVG assets on demand from the [jsDelivr CDN](https://www.jsdelivr.com/) (`cdn.jsdelivr.net/npm/@fluentui/svg-icons`), keeping the extension itself small.
 - Clicking an icon opens a modal where you can pick a size, then copy, download, or grab a webfont-style snippet for it.
 
-## Installation (from source)
+## From Chrome Web Store or Edge Add-ons
+
+Comming soon
+
+## Manual Installation (Developer Mode)
 
 1. Clone or download this repository.
 2. Generate the icon index (requires the `@fluentui/svg-icons` package to be installed in `node_modules`):
@@ -50,9 +60,22 @@ A lightweight Chrome extension that lets you browse, search, copy, and download 
 
 ## Permissions
 
-- `sidePanel` — to render the extension UI in Chrome's side panel
+- `sidePanel` — to render the extension UI in Chrome's/Edge's side panel
 - `clipboardWrite` — to support the copy-SVG / copy-webfont-snippet actions
 - Host permission for `cdn.jsdelivr.net` — to fetch icon SVGs at runtime
+
+## Browser compatibility
+
+- Chrome
+- Edge
+- Brave
+
+## Privacy
+
+- No analytics
+- No tracking
+- No external servers
+- All processing is performed locally
 
 ## Credits
 
