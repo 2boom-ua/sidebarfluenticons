@@ -26,7 +26,7 @@ A lightweight Chrome extension that lets you browse, search, copy, and download 
 1. Clone or download this repository.
 2. Generate the icon index (requires the `@fluentui/svg-icons` package to be installed in `node_modules`):
    ```bash
-   npm install @fluentui/svg-icons@1.1.339
+   npm install @fluentui/svg-icons@1.1.339 or @x.x.xxx
    node tools/generate-icons.js
    ```
    This produces `data/icons.json`.
