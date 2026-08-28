@@ -1,0 +1,82 @@
+{
+  "appName": {
+    "message": "Fluent Icons",
+    "description": "Назва розширення"
+  },
+  "searchPlaceholder": {
+    "message": "Пошук іконок...",
+    "description": "Підказка в полі пошуку"
+  },
+  "filterRegular": {
+    "message": "Regular",
+    "description": "Кнопка фільтру звичайних"
+  },
+  "filterFilled": {
+    "message": "Filled",
+    "description": "Кнопка фільтру заповнених"
+  },
+  "iconsCount": {
+    "message": "іконок",
+    "description": "Підпис лічильника"
+  },
+  "noResults": {
+    "message": "Нічого не знайдено",
+    "description": "Повідомлення при пустому результаті"
+  },
+  "loadingIcons": {
+    "message": "Завантаження іконок...",
+    "description": "Стан завантаження"
+  },
+  "copySvg": {
+    "message": "Копіювати SVG",
+    "description": "Підказка кнопки копіювання"
+  },
+  "downloadSvg": {
+    "message": "Завантажити SVG",
+    "description": "Підказка кнопки завантаження"
+  },
+  "useAsFont": {
+    "message": "Використовувати як шрифт",
+    "description": "Підказка кнопки веб-шрифту"
+  },
+  "copied": {
+    "message": "Скопійовано!",
+    "description": "Сповіщення про успішне копіювання"
+  },
+  "downloaded": {
+    "message": "Завантажено!",
+    "description": "Сповіщення про успішне завантаження"
+  },
+  "loading": {
+    "message": "Завантаження...",
+    "description": "Сповіщення про завантаження"
+  },
+  "downloading": {
+    "message": "Завантажується...",
+    "description": "Сповіщення про процес завантаження"
+  },
+  "copyFailed": {
+    "message": "Помилка копіювання: ",
+    "description": "Сповіщення про помилку копіювання"
+  },
+  "downloadFailed": {
+    "message": "Помилка завантаження: ",
+    "description": "Сповіщення про помилку завантаження"
+  },
+  "unableToLoad": {
+    "message": "Не вдалося завантажити іконки",
+    "description": "Заголовок глобальної помилки"
+  },
+  "checkConnection": {
+    "message": "Перевірте підключення до інтернету.",
+    "description": "Підзаголовок глобальної помилки"
+  },
+  "retry": {
+    "message": "Повторити",
+    "description": "Кнопка повтору"
+  },
+  "sizesLabel": {
+    "message": "Розміри:",
+    "description": "Підпис розмірів у модальному вікні"
+  }
+}

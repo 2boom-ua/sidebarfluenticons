@@ -1,0 +1,82 @@
+{
+  "appName": {
+    "message": "Fluent Icons",
+    "description": "Extension name"
+  },
+  "searchPlaceholder": {
+    "message": "Search icons...",
+    "description": "Search input placeholder"
+  },
+  "filterRegular": {
+    "message": "Regular",
+    "description": "Regular filter button"
+  },
+  "filterFilled": {
+    "message": "Filled",
+    "description": "Filled filter button"
+  },
+  "iconsCount": {
+    "message": "icons",
+    "description": "Counter label"
+  },
+  "noResults": {
+    "message": "No results found",
+    "description": "Empty state message"
+  },
+  "loadingIcons": {
+    "message": "Loading icons...",
+    "description": "Loading state"
+  },
+  "copySvg": {
+    "message": "Copy SVG",
+    "description": "Copy button tooltip"
+  },
+  "downloadSvg": {
+    "message": "Download SVG",
+    "description": "Download button tooltip"
+  },
+  "useAsFont": {
+    "message": "Use as Font",
+    "description": "Webfont button tooltip"
+  },
+  "copied": {
+    "message": "Copied!",
+    "description": "Copy success toast"
+  },
+  "downloaded": {
+    "message": "Downloaded!",
+    "description": "Download success toast"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading toast"
+  },
+  "downloading": {
+    "message": "Downloading...",
+    "description": "Downloading toast"
+  },
+  "copyFailed": {
+    "message": "Copy failed: ",
+    "description": "Copy error toast"
+  },
+  "downloadFailed": {
+    "message": "Download failed: ",
+    "description": "Download error toast"
+  },
+  "unableToLoad": {
+    "message": "Unable to load icons",
+    "description": "Global error title"
+  },
+  "checkConnection": {
+    "message": "Check your connection.",
+    "description": "Global error subtitle"
+  },
+  "retry": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "sizesLabel": {
+    "message": "Sizes:",
+    "description": "Sizes label in modal"
+  }
+}

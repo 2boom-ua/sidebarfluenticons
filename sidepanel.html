@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluent Icons</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="search-wrapper">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search icons..." data-i18n="searchPlaceholder">
+      <button class="clear-btn" id="clearSearchBtn">✕</button>
+    </div>
+
+    <div class="controls">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="regular" data-i18n="filterRegular">Regular</button>
+        <button class="filter-btn" data-filter="filled" data-i18n="filterFilled">Filled</button>
+        <div id="counter" data-i18n="iconsCount">0 icons</div>
+      </div>
+    </div>
+
+    <div id="grid"></div>
+  </div>
+
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal-window">
+      <button id="modalCloseBtn" class="modal-close-btn">
+        <img src="icons/ic_fluent_dismiss_24_regular.svg" width="20" height="20" alt="Close" />
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
