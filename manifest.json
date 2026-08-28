@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Fluent System Icons Viewer",
   "default_locale": "en",
-  "version": "0.5",
+  "version": "1.0",
   "description": "Online viewer for Fluent System Icons",
   "icons": {
     "16": "icons/icon_16.png",
