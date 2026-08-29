@@ -78,5 +78,9 @@
   "sizesLabel": {
     "message": "Sizes:",
     "description": "Sizes label in modal"
+  },
+    "exportBg": {
+    "message": "Export as CSS background",
+    "description": "Export background button tooltip"
   }
 }

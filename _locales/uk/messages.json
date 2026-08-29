@@ -78,5 +78,9 @@
   "sizesLabel": {
     "message": "Розміри:",
     "description": "Підпис розмірів у модальному вікні"
+  },
+    "exportBg": {
+    "message": "Експорт як CSS фон",
+    "description": "Підказка кнопки експорту фону"
   }
 }

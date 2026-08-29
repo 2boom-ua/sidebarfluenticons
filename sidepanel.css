@@ -377,7 +377,8 @@ body {
 
 #modalContent .copy-btn,
 #modalContent .download-btn,
-#modalContent .webfont-btn {
+#modalContent .webfont-btn,
+#modalContent .export-bg-btn {
   padding: 6px 16px;
   font-size: 13px;
   border: 1px solid var(--color-border);
@@ -393,7 +394,8 @@ body {
 
 #modalContent .copy-btn:hover,
 #modalContent .download-btn:hover,
-#modalContent .webfont-btn:hover {
+#modalContent .webfont-btn:hover,
+#modalContent .export-bg-btn:hover {
   background: var(--color-primaryActive);
   color: var(--color-background);
   border-color: var(--color-primary);
@@ -401,20 +403,23 @@ body {
 
 #modalContent .copy-btn img,
 #modalContent .download-btn img,
-#modalContent .webfont-btn img {
+#modalContent .webfont-btn img,
+#modalContent .export-bg-btn img {
   display: block;
   filter: var(--svg-filter);
 }
 
 #modalContent .copy-btn:hover img,
 #modalContent .download-btn:hover img,
-#modalContent .webfont-btn:hover img {
+#modalContent .webfont-btn:hover img,
+#modalContent .export-bg-btn:hover img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(22%) hue-rotate(342deg) brightness(106%) contrast(105%);
 }
 
 [data-theme="dark"] #modalContent .copy-btn:hover,
 [data-theme="dark"] #modalContent .download-btn:hover,
-[data-theme="dark"] #modalContent .webfont-btn:hover {
+[data-theme="dark"] #modalContent .webfont-btn:hover,
+[data-theme="dark"] #modalContent .export-bg-btn:hover {
   background: var(--color-primaryHover);
   color: var(--color-text);
   border-color: var(--color-primaryHover);
@@ -422,7 +427,8 @@ body {
 
 [data-theme="dark"] #modalContent .copy-btn:hover img,
 [data-theme="dark"] #modalContent .download-btn:hover img,
-[data-theme="dark"] #modalContent .webfont-btn:hover img {
+[data-theme="dark"] #modalContent .webfont-btn:hover img,
+[data-theme="dark"] #modalContent .export-bg-btn:hover img {
   filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0.9) contrast(1);
 }
 

@@ -188,6 +188,9 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
       <button class="webfont-btn">
         <img src="icons/ic_fluent_text_font_24_regular.svg" width="20" height="20" alt="Webfont" />
       </button>
+      <button class="export-bg-btn">
+        <img src="icons/ic_fluent_code_24_regular.svg" width="20" height="20" alt="Export BG" />
+      </button>
     </div>
   `;
 
@@ -222,6 +225,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
   const copyBtn = modalContent.querySelector('.copy-btn');
   const downloadBtn = modalContent.querySelector('.download-btn');
   const webfontBtn = modalContent.querySelector('.webfont-btn');
+  const exportBgBtn = modalContent.querySelector('.export-bg-btn');
 
   copyBtn.addEventListener('mouseenter', function(e) {
     const rect = this.getBoundingClientRect();
@@ -310,6 +314,35 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
 
   webfontBtn.addEventListener('mouseleave', hideTooltip);
 
+  exportBgBtn.addEventListener('mouseenter', function(e) {
+    const rect = this.getBoundingClientRect();
+    const text = _('exportBg');
+    const tooltipWidth = Math.min(text.length * 7 + 20, 200);
+    const tooltipHeight = 28;
+    
+    let left = rect.left + rect.width / 2 - tooltipWidth / 2;
+    let top = rect.bottom + 8;
+    
+    const padding = 8;
+    const maxLeft = window.innerWidth - tooltipWidth - padding;
+    const minLeft = padding;
+    
+    if (left < minLeft) {
+      left = minLeft;
+    } else if (left > maxLeft) {
+      left = maxLeft;
+    }
+    
+    tooltipEl.textContent = text;
+    tooltipEl.style.left = left + 'px';
+    tooltipEl.style.top = top + 'px';
+    tooltipEl.style.maxWidth = '200px';
+    tooltipEl.style.whiteSpace = 'nowrap';
+    tooltipEl.classList.add('visible');
+  });
+
+  exportBgBtn.addEventListener('mouseleave', hideTooltip);
+
   copyBtn.addEventListener('click', function() {
     const filename = `${name}_${currentSelectedSize}_${style}.svg`;
     const url = CDN_BASE + filename;
@@ -365,6 +398,30 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
     const htmlString = `<i class="${webfontClass}"></i>`;
     
     navigator.clipboard.writeText(htmlString)
+      .then(() => {
+        showToast(_('copied'), 'success');
+      })
+      .catch(err => {
+        showToast(_('copyFailed') + err.message, 'error');
+      });
+  });
+
+  exportBgBtn.addEventListener('click', function() {
+    const filename = `${name}_${currentSelectedSize}_${style}.svg`;
+    const url = CDN_BASE + filename;
+    
+    showToast(_('loading'), 'info');
+
+    fetch(url)
+      .then(r => {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(svgText => {
+        const base64 = btoa(unescape(encodeURIComponent(svgText)));
+        const css = `background-image: url(data:image/svg+xml;base64,${base64});`;
+        return navigator.clipboard.writeText(css).then(() => css);
+      })
       .then(() => {
         showToast(_('copied'), 'success');
       })
