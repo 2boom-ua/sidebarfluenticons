@@ -44,7 +44,7 @@
   --color-warning: #d96a44;
   --color-error: #d14578;
   --color-info: #0082a6;
-  --svg-filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(0%) hue-rotate(0deg) brightness(0.88) contrast(1);
+  --svg-filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(0%) hue-rotate(0deg) brightness(0.88) contrast(1); 
   --tooltip-bg: #1a1a1a;
   --tooltip-text: #e0e0e0;
   --modal-bg: #2a2a2a;
@@ -521,4 +521,21 @@ body {
 
 .toast.visible {
   opacity: 1;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: auto;
+    padding: 10px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.4;
+    user-select: none;
+    pointer-events: none;
+    color: var(--text-body);
+}
+
+.footer strong {
+    font-weight: 600;
 }
