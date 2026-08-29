@@ -80,7 +80,7 @@
     "description": "Sizes label in modal"
   },
     "exportBg": {
-    "message": "Export as CSS background",
+    "message": "Export CSS Background",
     "description": "Export background button tooltip"
   }
 }
