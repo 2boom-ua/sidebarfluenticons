@@ -366,11 +366,12 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
   });
 
   downloadBtn.addEventListener('click', function() {
-    const filename = `${name}_${currentSelectedSize}_${style}.svg`;
-    const url = CDN_BASE + filename;
+    const cdnFilename = `${name}_${currentSelectedSize}_${style}.svg`;
+    const saveFilename = `ic_fluent_${name}_${currentSelectedSize}_${style}.svg`;
+    const url = CDN_BASE + cdnFilename;
     
     showToast(_('downloading'), 'info');
-
+  
     fetch(url)
       .then(r => {
         if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -381,7 +382,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
         const blobUrl = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = filename;
+        a.download = saveFilename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
