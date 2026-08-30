@@ -4,7 +4,7 @@
 
 # Fluent System Icons Viewer
 
-![Version](https://img.shields.io/badge/version-1.1-green.svg)
+![Version](https://img.shields.io/badge/version-1.2-green.svg)
 
 A lightweight Chrome/Edge extension that lets you browse, search, copy, and download [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons) directly from a browser side panel.
 
