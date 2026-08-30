@@ -16,6 +16,7 @@ A lightweight Chrome/Edge extension that lets you browse, search, copy, and down
 - **Detail view** — click an icon to open a modal with all available sizes
 - **Copy SVG** — copy the raw SVG markup straight to your clipboard
 - **Download** — save the SVG file for the selected size
+- **Export** as CSS background
 - **Webfont snippet** — copy an `<i class="...">` webfont-style tag
 - **Light / dark theme** — automatically follows your system color scheme
 - **Localization-ready** — UI strings are pulled through `chrome.i18n`
