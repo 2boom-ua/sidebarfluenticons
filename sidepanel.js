@@ -85,12 +85,31 @@ function fetchIconsIndex() {
       return r.json();
     })
     .then(data => {
-      if (!data || !data.icons || !Array.isArray(data.icons) || data.icons.length === 0) {
-        throw new Error('Index is empty or invalid');
+      let iconsArray;
+      let version = '1.1.339';
+      
+      if (Array.isArray(data)) {
+        iconsArray = data;
+      } else if (data && data.icons && Array.isArray(data.icons)) {
+        iconsArray = data.icons;
+        version = data.version || version;
+      } else {
+        throw new Error('Invalid icons.json structure');
       }
-      FLUENT_ICONS_VERSION = data.version || '1.1.339';
+      
+      if (iconsArray.length === 0) {
+        throw new Error('Index is empty');
+      }
+      
+      FLUENT_ICONS_VERSION = version;
       CDN_BASE = `https://cdn.jsdelivr.net/npm/@fluentui/svg-icons@${FLUENT_ICONS_VERSION}/icons/`;
-      return data.icons;
+      
+      const versionEl = document.querySelector('.footer .version');
+      if (versionEl) {
+        versionEl.textContent = 'Icons v' + FLUENT_ICONS_VERSION;
+      }
+      
+      return iconsArray;
     });
 }
 
