@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Fluent System Icons Viewer",
+  "name": "__MSG_appName__",
   "default_locale": "en",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Online viewer for Fluent System Icons",
   "icons": {
     "16": "icons/icon_16.png",
@@ -10,9 +10,10 @@
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "permissions": ["sidePanel", "clipboardWrite"],
+  "permissions": ["sidePanel", "clipboardWrite", "storage"],
   "host_permissions": [
-    "https://cdn.jsdelivr.net/*"
+    "https://cdn.jsdelivr.net/*",
+    "https://raw.githubusercontent.com/*"
   ],
   "side_panel": {
     "default_path": "sidepanel.html"

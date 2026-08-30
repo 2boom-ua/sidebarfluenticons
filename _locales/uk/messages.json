@@ -1,86 +1,114 @@
 {
   "appName": {
-    "message": "Fluent Icons",
-    "description": "Назва розширення"
+    "message": "Fluent Іконки",
+    "description": "Extension name"
   },
   "searchPlaceholder": {
     "message": "Пошук іконок...",
-    "description": "Підказка в полі пошуку"
+    "description": "Search input placeholder"
   },
   "filterRegular": {
-    "message": "Regular",
-    "description": "Кнопка фільтру звичайних"
+    "message": "Звичайні",
+    "description": "Regular filter button"
   },
   "filterFilled": {
-    "message": "Filled",
-    "description": "Кнопка фільтру заповнених"
+    "message": "Залиті",
+    "description": "Filled filter button"
   },
   "iconsCount": {
     "message": "іконок",
-    "description": "Підпис лічильника"
+    "description": "Counter label"
   },
   "noResults": {
     "message": "Нічого не знайдено",
-    "description": "Повідомлення при пустому результаті"
+    "description": "Empty state message"
   },
   "loadingIcons": {
     "message": "Завантаження іконок...",
-    "description": "Стан завантаження"
+    "description": "Loading state"
   },
   "copySvg": {
     "message": "Копіювати SVG",
-    "description": "Підказка кнопки копіювання"
+    "description": "Copy button tooltip"
   },
   "downloadSvg": {
     "message": "Завантажити SVG",
-    "description": "Підказка кнопки завантаження"
+    "description": "Download button tooltip"
   },
   "useAsFont": {
-    "message": "Використовувати як шрифт",
-    "description": "Підказка кнопки веб-шрифту"
+    "message": "Використати як шрифт",
+    "description": "Webfont button tooltip"
   },
-  "copied": {
-    "message": "Скопійовано!",
-    "description": "Сповіщення про успішне копіювання"
-  },
-  "downloaded": {
-    "message": "Завантажено!",
-    "description": "Сповіщення про успішне завантаження"
-  },
-  "loading": {
-    "message": "Завантаження...",
-    "description": "Сповіщення про завантаження"
-  },
-  "downloading": {
-    "message": "Завантажується...",
-    "description": "Сповіщення про процес завантаження"
-  },
-  "copyFailed": {
-    "message": "Помилка копіювання: ",
-    "description": "Сповіщення про помилку копіювання"
-  },
-  "downloadFailed": {
-    "message": "Помилка завантаження: ",
-    "description": "Сповіщення про помилку завантаження"
-  },
-  "unableToLoad": {
-    "message": "Не вдалося завантажити іконки",
-    "description": "Заголовок глобальної помилки"
-  },
-  "checkConnection": {
-    "message": "Перевірте підключення до інтернету.",
-    "description": "Підзаголовок глобальної помилки"
-  },
-  "retry": {
-    "message": "Повторити",
-    "description": "Кнопка повтору"
+  "exportBg": {
+    "message": "Експортувати CSS фон",
+    "description": "Export background button tooltip"
   },
   "sizesLabel": {
     "message": "Розміри:",
-    "description": "Підпис розмірів у модальному вікні"
+    "description": "Sizes label in modal"
   },
-    "exportBg": {
-    "message": "Експорт як CSS фон",
-    "description": "Підказка кнопки експорту фону"
+  "copied": {
+    "message": "Скопійовано!",
+    "description": "Copy success toast"
+  },
+  "downloaded": {
+    "message": "Завантажено!",
+    "description": "Download success toast"
+  },
+  "loading": {
+    "message": "Завантаження...",
+    "description": "Loading toast"
+  },
+  "downloading": {
+    "message": "Завантаження...",
+    "description": "Downloading toast"
+  },
+  "copyFailed": {
+    "message": "Помилка копіювання: ",
+    "description": "Copy error toast"
+  },
+  "downloadFailed": {
+    "message": "Помилка завантаження: ",
+    "description": "Download error toast"
+  },
+  "unableToLoad": {
+    "message": "Не вдалося завантажити іконки",
+    "description": "Global error title"
+  },
+  "checkConnection": {
+    "message": "Перевірте підключення до інтернету.",
+    "description": "Global error subtitle"
+  },
+  "retry": {
+    "message": "Повторити",
+    "description": "Retry button"
+  },
+  "clearTooltip": {
+    "message": "Очистити пошук",
+    "description": "Clear button tooltip"
+  },
+  "closeModalTooltip": {
+    "message": "Закрити",
+    "description": "Close modal button tooltip"
+  },
+  "updateTooltip": {
+    "message": "Перевірити оновлення",
+    "description": "Update button tooltip"
+  },
+  "iconsUpdated": {
+    "message": "Іконки оновлено до",
+    "description": "Update success toast"
+  },
+  "updateFailed": {
+    "message": "Помилка оновлення",
+    "description": "Update error toast"
+  },
+  "unknownError": {
+    "message": "Невідома помилка",
+    "description": "Unknown error toast"
+  },
+  "noNewVersion": {
+    "message": "Нової версії немає",
+    "description": "Update skip toast"
   }
 }

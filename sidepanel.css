@@ -155,6 +155,33 @@ body {
   margin-left: auto;
 }
 
+.update-btn {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--color-textSecondary);
+  border-radius: 4px;
+  transition: color 0.15s, opacity 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.update-btn:hover:not(:disabled) {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.update-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.update-btn svg {
+  display: block;
+}
+
 #grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

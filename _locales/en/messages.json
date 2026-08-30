@@ -39,6 +39,14 @@
     "message": "Use as Font",
     "description": "Webfont button tooltip"
   },
+  "exportBg": {
+    "message": "Export CSS Background",
+    "description": "Export background button tooltip"
+  },
+  "sizesLabel": {
+    "message": "Sizes:",
+    "description": "Sizes label in modal"
+  },
   "copied": {
     "message": "Copied!",
     "description": "Copy success toast"
@@ -75,12 +83,32 @@
     "message": "Retry",
     "description": "Retry button"
   },
-  "sizesLabel": {
-    "message": "Sizes:",
-    "description": "Sizes label in modal"
+  "clearTooltip": {
+    "message": "Clear search",
+    "description": "Clear button tooltip"
   },
-    "exportBg": {
-    "message": "Export CSS Background",
-    "description": "Export background button tooltip"
+  "closeModalTooltip": {
+    "message": "Close",
+    "description": "Close modal button tooltip"
+  },
+  "updateTooltip": {
+    "message": "Check for Update",
+    "description": "Update button tooltip"
+  },
+  "iconsUpdated": {
+    "message": "Icons updated to",
+    "description": "Update success toast"
+  },
+  "updateFailed": {
+    "message": "Update failed",
+    "description": "Update error toast"
+  },
+  "unknownError": {
+    "message": "Unknown error",
+    "description": "Unknown error toast"
+  },
+  "noNewVersion": {
+    "message": "No new version available",
+    "description": "Update skip toast"
   }
 }

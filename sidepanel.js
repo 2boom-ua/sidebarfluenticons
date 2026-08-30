@@ -19,6 +19,7 @@ const clearSearchBtn = document.getElementById('clearSearchBtn');
 const counterEl = document.getElementById('counter');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const tooltipEl = document.getElementById('tooltip');
+const updateBtn = document.getElementById('updateIconsBtn');
 
 function _(key) {
   return chrome.i18n.getMessage(key);
@@ -32,6 +33,15 @@ function applyI18n() {
       el.placeholder = text;
     } else {
       el.textContent = text;
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-tooltip]').forEach(el => {
+    if (el.id === 'updateIconsBtn') return;
+    const key = el.dataset.i18nTooltip;
+    const text = _(key);
+    if (text) {
+      el.title = text;
     }
   });
 }
@@ -111,6 +121,30 @@ function fetchIconsIndex() {
       
       return iconsArray;
     });
+}
+
+function loadIconsFromStorage() {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(['iconsData'], function(result) {
+      if (result.iconsData && result.iconsData.icons && result.iconsData.icons.length > 0) {
+        resolve(result.iconsData);
+      } else {
+        resolve(null);
+      }
+    });
+  });
+}
+
+function saveIconsToStorage(data) {
+  return new Promise((resolve) => {
+    chrome.storage.local.set({ iconsData: data }, function() {
+      resolve();
+    });
+  });
+}
+
+function loadBundledIcons() {
+  return fetchIconsIndex();
 }
 
 function getFilteredIcons(icons) {
@@ -198,20 +232,29 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
       <span class="size-buttons">${sizeButtonsHtml}</span>
     </div>
     <div class="detail-actions">
-      <button class="copy-btn">
+      <button class="copy-btn" data-i18n-tooltip="copySvg">
         <img src="icons/copy_24_regular.svg" width="20" height="20" alt="Copy" />
       </button>
-      <button class="download-btn">
+      <button class="download-btn" data-i18n-tooltip="downloadSvg">
         <img src="icons/arrow_download_24_regular.svg" width="20" height="20" alt="Download" />
       </button>
-      <button class="webfont-btn">
+      <button class="webfont-btn" data-i18n-tooltip="useAsFont">
         <img src="icons/ic_fluent_text_font_24_regular.svg" width="20" height="20" alt="Webfont" />
       </button>
-      <button class="export-bg-btn">
+      <button class="export-bg-btn" data-i18n-tooltip="exportBg">
         <img src="icons/ic_fluent_code_24_regular.svg" width="20" height="20" alt="Export BG" />
       </button>
     </div>
   `;
+
+  // Re-apply i18n for dynamically added elements
+  document.querySelectorAll('#modalContent [data-i18n-tooltip]').forEach(el => {
+    const key = el.dataset.i18nTooltip;
+    const text = _(key);
+    if (text) {
+      el.title = text;
+    }
+  });
 
   const previewImg = modalContent.querySelector('.detail-preview img');
   if (previewImg) {
@@ -248,7 +291,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
 
   copyBtn.addEventListener('mouseenter', function(e) {
     const rect = this.getBoundingClientRect();
-    const text = _('copySvg');
+    const text = this.title || _('copySvg');
     const tooltipWidth = Math.min(text.length * 7 + 20, 200);
     const tooltipHeight = 28;
     
@@ -277,7 +320,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
 
   downloadBtn.addEventListener('mouseenter', function(e) {
     const rect = this.getBoundingClientRect();
-    const text = _('downloadSvg');
+    const text = this.title || _('downloadSvg');
     const tooltipWidth = Math.min(text.length * 7 + 20, 200);
     const tooltipHeight = 28;
     
@@ -306,7 +349,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
 
   webfontBtn.addEventListener('mouseenter', function(e) {
     const rect = this.getBoundingClientRect();
-    const text = _('useAsFont');
+    const text = this.title || _('useAsFont');
     const tooltipWidth = Math.min(text.length * 7 + 20, 200);
     const tooltipHeight = 28;
     
@@ -335,7 +378,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
 
   exportBgBtn.addEventListener('mouseenter', function(e) {
     const rect = this.getBoundingClientRect();
-    const text = _('exportBg');
+    const text = this.title || _('exportBg');
     const tooltipWidth = Math.min(text.length * 7 + 20, 200);
     const tooltipHeight = 28;
     
@@ -567,6 +610,43 @@ filterBtns.forEach(btn => {
   });
 });
 
+// Tooltip handlers for update button
+if (updateBtn) {
+  updateBtn.addEventListener('mouseenter', function(e) {
+    const rect = this.getBoundingClientRect();
+    const key = this.dataset.i18nTooltip;
+    const text = key ? _(key) : 'Check for Update';
+    const tooltipWidth = Math.min(text.length * 7 + 20, 200);
+    const tooltipHeight = 28;
+    
+    let left = rect.left + rect.width / 2 - tooltipWidth / 2;
+    let top = rect.top - tooltipHeight - 4;
+    
+    const padding = 8;
+    const maxLeft = window.innerWidth - tooltipWidth - padding;
+    const minLeft = padding;
+    
+    if (left < minLeft) {
+      left = minLeft;
+    } else if (left > maxLeft) {
+      left = maxLeft;
+    }
+    
+    if (top < padding) {
+      top = rect.bottom + 8;
+    }
+    
+    tooltipEl.textContent = text;
+    tooltipEl.style.left = left + 'px';
+    tooltipEl.style.top = top + 'px';
+    tooltipEl.style.maxWidth = '200px';
+    tooltipEl.style.whiteSpace = 'nowrap';
+    tooltipEl.classList.add('visible');
+  });
+
+  updateBtn.addEventListener('mouseleave', hideTooltip);
+}
+
 function showToast(message, type = 'success') {
   const toast = document.getElementById('toast');
   toast.textContent = message;
@@ -577,15 +657,123 @@ function showToast(message, type = 'success') {
   }, 2000);
 }
 
-function init() {
-  applyI18n();
-  gridEl.innerHTML = `<div class="loading-state">${_('loadingIcons')}</div>`;
+function updateIconsFromGitHub() {
+  updateBtn.disabled = true;
+  showToast(_('loading'), 'info');
 
-  fetchIconsIndex()
+  const url = 'https://raw.githubusercontent.com/2boom-ua/sidebarfluenticons/main/data/icons.json?t=' + Date.now();
+
+  fetch(url)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
     .then(data => {
-      rawIcons = data;
+      let iconsArray;
+      let version = '';
+
+      if (data && data.icons && Array.isArray(data.icons)) {
+        iconsArray = data.icons;
+        version = data.version || '';
+      } else {
+        throw new Error('Invalid JSON structure');
+      }
+
+      if (iconsArray.length === 0) {
+        throw new Error('Empty icons array');
+      }
+
+      if (!version || version.trim() === '') {
+        throw new Error('Missing version');
+      }
+
+      return loadIconsFromStorage().then(storedData => {
+        if (storedData && storedData.version === version) {
+          throw new Error('No new version available');
+        }
+        return { iconsArray, version };
+      });
+    })
+    .then(({ iconsArray, version }) => {
+      const saveData = {
+        version: version,
+        icons: iconsArray
+      };
+      return saveIconsToStorage(saveData).then(() => {
+        return saveData;
+      });
+    })
+    .then(data => {
+      FLUENT_ICONS_VERSION = data.version;
+      CDN_BASE = `https://cdn.jsdelivr.net/npm/@fluentui/svg-icons@${FLUENT_ICONS_VERSION}/icons/`;
+      
+      const versionEl = document.querySelector('.footer .version');
+      if (versionEl) {
+        versionEl.textContent = 'Icons v' + FLUENT_ICONS_VERSION;
+      }
+
+      rawIcons = data.icons;
       groupedIcons = buildIconMap(rawIcons);
       renderGrid();
+
+      showToast(_('iconsUpdated') + ' v' + FLUENT_ICONS_VERSION, 'success');
+    })
+    .catch(err => {
+      if (err.message === 'No new version available') {
+        showToast(_('noNewVersion'), 'info');
+        return;
+      }
+      let msg = _('updateFailed') + ': ';
+      if (err.message) {
+        msg += err.message;
+      } else {
+        msg += _('unknownError');
+      }
+      showToast(msg, 'error');
+    })
+    .finally(() => {
+      updateBtn.disabled = false;
+    });
+}
+
+function init() {
+  applyI18n();
+
+  updateBtn.addEventListener('click', function() {
+    updateIconsFromGitHub();
+  });
+
+  gridEl.innerHTML = `<div class="loading-state">${_('loadingIcons')}</div>`;
+
+  loadIconsFromStorage()
+    .then(storedData => {
+      if (storedData && storedData.icons && storedData.icons.length > 0) {
+        FLUENT_ICONS_VERSION = storedData.version || '1.1.339';
+        CDN_BASE = `https://cdn.jsdelivr.net/npm/@fluentui/svg-icons@${FLUENT_ICONS_VERSION}/icons/`;
+        
+        const versionEl = document.querySelector('.footer .version');
+        if (versionEl) {
+          versionEl.textContent = 'Icons v' + FLUENT_ICONS_VERSION;
+        }
+
+        rawIcons = storedData.icons;
+        groupedIcons = buildIconMap(rawIcons);
+        renderGrid();
+        return;
+      }
+
+      return loadBundledIcons()
+        .then(iconsArray => {
+          const data = {
+            version: FLUENT_ICONS_VERSION,
+            icons: iconsArray
+          };
+          return saveIconsToStorage(data).then(() => {
+            rawIcons = iconsArray;
+            groupedIcons = buildIconMap(rawIcons);
+            renderGrid();
+          });
+        });
     })
     .catch(err => {
       console.error('Init error:', err);
