@@ -8,11 +8,11 @@
     "description": "Search input placeholder"
   },
   "filterRegular": {
-    "message": "Звичайні",
+    "message": "Regular",
     "description": "Regular filter button"
   },
   "filterFilled": {
-    "message": "Залиті",
+    "message": "Filled",
     "description": "Filled filter button"
   },
   "iconsCount": {
