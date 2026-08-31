@@ -58,10 +58,14 @@ body {
   color: var(--color-text);
   font-size: 14px;
   padding: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #app {
   max-width: 100%;
+  flex: 1;
 }
 
 .search-wrapper {
