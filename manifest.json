@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_appName__",
   "default_locale": "en",
-  "version": "1.3",
+  "version": "1.4",
   "description": "Online viewer for Fluent System Icons",
   "icons": {
     "16": "icons/icon_16.png",
