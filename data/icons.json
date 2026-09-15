@@ -1,5 +1,5 @@
 {
-  "version": "1.1.339",
+  "version": "1.1.341",
   "icons": [
     {
       "name": "access_time",
@@ -22076,6 +22076,54 @@
       "file": "channel_arrow_left_48_regular.svg"
     },
     {
+      "name": "channel_arrow_right",
+      "size": 16,
+      "style": "filled",
+      "file": "channel_arrow_right_16_filled.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 16,
+      "style": "regular",
+      "file": "channel_arrow_right_16_regular.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 20,
+      "style": "filled",
+      "file": "channel_arrow_right_20_filled.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 20,
+      "style": "regular",
+      "file": "channel_arrow_right_20_regular.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 24,
+      "style": "filled",
+      "file": "channel_arrow_right_24_filled.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 24,
+      "style": "regular",
+      "file": "channel_arrow_right_24_regular.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 28,
+      "style": "filled",
+      "file": "channel_arrow_right_28_filled.svg"
+    },
+    {
+      "name": "channel_arrow_right",
+      "size": 28,
+      "style": "regular",
+      "file": "channel_arrow_right_28_regular.svg"
+    },
+    {
       "name": "channel_dismiss",
       "size": 16,
       "style": "filled",
@@ -22302,6 +22350,18 @@
       "size": 24,
       "style": "regular",
       "file": "chart_multiple_24_regular.svg"
+    },
+    {
+      "name": "chart_multiple",
+      "size": 28,
+      "style": "filled",
+      "file": "chart_multiple_28_filled.svg"
+    },
+    {
+      "name": "chart_multiple",
+      "size": 28,
+      "style": "regular",
+      "file": "chart_multiple_28_regular.svg"
     },
     {
       "name": "chart_multiple",
@@ -33162,6 +33222,78 @@
       "size": 24,
       "style": "regular",
       "file": "counter_24_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 16,
+      "style": "filled",
+      "file": "cowork_16_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 16,
+      "style": "regular",
+      "file": "cowork_16_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 20,
+      "style": "filled",
+      "file": "cowork_20_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 20,
+      "style": "regular",
+      "file": "cowork_20_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 24,
+      "style": "filled",
+      "file": "cowork_24_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 24,
+      "style": "regular",
+      "file": "cowork_24_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 28,
+      "style": "filled",
+      "file": "cowork_28_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 28,
+      "style": "regular",
+      "file": "cowork_28_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 32,
+      "style": "filled",
+      "file": "cowork_32_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 32,
+      "style": "regular",
+      "file": "cowork_32_regular.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 48,
+      "style": "filled",
+      "file": "cowork_48_filled.svg"
+    },
+    {
+      "name": "cowork",
+      "size": 48,
+      "style": "regular",
+      "file": "cowork_48_regular.svg"
     },
     {
       "name": "credit_card_clock",
@@ -47085,6 +47217,18 @@
     },
     {
       "name": "filter_add",
+      "size": 16,
+      "style": "filled",
+      "file": "filter_add_16_filled.svg"
+    },
+    {
+      "name": "filter_add",
+      "size": 16,
+      "style": "regular",
+      "file": "filter_add_16_regular.svg"
+    },
+    {
+      "name": "filter_add",
       "size": 20,
       "style": "filled",
       "file": "filter_add_20_filled.svg"
@@ -47094,6 +47238,18 @@
       "size": 20,
       "style": "regular",
       "file": "filter_add_20_regular.svg"
+    },
+    {
+      "name": "filter_add",
+      "size": 24,
+      "style": "filled",
+      "file": "filter_add_24_filled.svg"
+    },
+    {
+      "name": "filter_add",
+      "size": 24,
+      "style": "regular",
+      "file": "filter_add_24_regular.svg"
     },
     {
       "name": "filter_dismiss",
@@ -47130,6 +47286,18 @@
       "size": 24,
       "style": "regular",
       "file": "filter_dismiss_24_regular.svg"
+    },
+    {
+      "name": "filter_sync",
+      "size": 16,
+      "style": "filled",
+      "file": "filter_sync_16_filled.svg"
+    },
+    {
+      "name": "filter_sync",
+      "size": 16,
+      "style": "regular",
+      "file": "filter_sync_16_regular.svg"
     },
     {
       "name": "filter_sync",
@@ -48234,6 +48402,78 @@
       "size": 32,
       "style": "regular",
       "file": "flow_32_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 16,
+      "style": "filled",
+      "file": "flow_arrow_16_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 16,
+      "style": "regular",
+      "file": "flow_arrow_16_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 20,
+      "style": "filled",
+      "file": "flow_arrow_20_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 20,
+      "style": "regular",
+      "file": "flow_arrow_20_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 24,
+      "style": "filled",
+      "file": "flow_arrow_24_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 24,
+      "style": "regular",
+      "file": "flow_arrow_24_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 28,
+      "style": "filled",
+      "file": "flow_arrow_28_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 28,
+      "style": "regular",
+      "file": "flow_arrow_28_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 32,
+      "style": "filled",
+      "file": "flow_arrow_32_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 32,
+      "style": "regular",
+      "file": "flow_arrow_32_regular.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 48,
+      "style": "filled",
+      "file": "flow_arrow_48_filled.svg"
+    },
+    {
+      "name": "flow_arrow",
+      "size": 48,
+      "style": "regular",
+      "file": "flow_arrow_48_regular.svg"
     },
     {
       "name": "flow_dot",
@@ -53358,6 +53598,42 @@
       "size": 28,
       "style": "regular",
       "file": "hand_multiple_28_regular.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 20,
+      "style": "filled",
+      "file": "hand_multiple_stack_20_filled.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 20,
+      "style": "regular",
+      "file": "hand_multiple_stack_20_regular.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 24,
+      "style": "filled",
+      "file": "hand_multiple_stack_24_filled.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 24,
+      "style": "regular",
+      "file": "hand_multiple_stack_24_regular.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 28,
+      "style": "filled",
+      "file": "hand_multiple_stack_28_filled.svg"
+    },
+    {
+      "name": "hand_multiple_stack",
+      "size": 28,
+      "style": "regular",
+      "file": "hand_multiple_stack_28_regular.svg"
     },
     {
       "name": "hand_open_heart",
@@ -60726,6 +61002,42 @@
       "size": 48,
       "style": "regular",
       "file": "lightbulb_pulse_48_regular.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 16,
+      "style": "filled",
+      "file": "lightbulb_sparkle_16_filled.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 16,
+      "style": "regular",
+      "file": "lightbulb_sparkle_16_regular.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 20,
+      "style": "filled",
+      "file": "lightbulb_sparkle_20_filled.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 20,
+      "style": "regular",
+      "file": "lightbulb_sparkle_20_regular.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 24,
+      "style": "filled",
+      "file": "lightbulb_sparkle_24_filled.svg"
+    },
+    {
+      "name": "lightbulb_sparkle",
+      "size": 24,
+      "style": "regular",
+      "file": "lightbulb_sparkle_24_regular.svg"
     },
     {
       "name": "likert",
@@ -70256,6 +70568,66 @@
       "file": "number_symbol_square_32_regular.svg"
     },
     {
+      "name": "omega",
+      "size": 16,
+      "style": "filled",
+      "file": "omega_16_filled.svg"
+    },
+    {
+      "name": "omega",
+      "size": 16,
+      "style": "regular",
+      "file": "omega_16_regular.svg"
+    },
+    {
+      "name": "omega",
+      "size": 20,
+      "style": "filled",
+      "file": "omega_20_filled.svg"
+    },
+    {
+      "name": "omega",
+      "size": 20,
+      "style": "regular",
+      "file": "omega_20_regular.svg"
+    },
+    {
+      "name": "omega",
+      "size": 24,
+      "style": "filled",
+      "file": "omega_24_filled.svg"
+    },
+    {
+      "name": "omega",
+      "size": 24,
+      "style": "regular",
+      "file": "omega_24_regular.svg"
+    },
+    {
+      "name": "omega",
+      "size": 28,
+      "style": "filled",
+      "file": "omega_28_filled.svg"
+    },
+    {
+      "name": "omega",
+      "size": 28,
+      "style": "regular",
+      "file": "omega_28_regular.svg"
+    },
+    {
+      "name": "omega",
+      "size": 32,
+      "style": "filled",
+      "file": "omega_32_filled.svg"
+    },
+    {
+      "name": "omega",
+      "size": 32,
+      "style": "regular",
+      "file": "omega_32_regular.svg"
+    },
+    {
       "name": "open",
       "size": 12,
       "style": "filled",
@@ -70530,6 +70902,54 @@
       "size": 48,
       "style": "regular",
       "file": "options_48_regular.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 16,
+      "style": "filled",
+      "file": "options_speaker_16_filled.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 16,
+      "style": "regular",
+      "file": "options_speaker_16_regular.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 20,
+      "style": "filled",
+      "file": "options_speaker_20_filled.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 20,
+      "style": "regular",
+      "file": "options_speaker_20_regular.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 24,
+      "style": "filled",
+      "file": "options_speaker_24_filled.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 24,
+      "style": "regular",
+      "file": "options_speaker_24_regular.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 28,
+      "style": "filled",
+      "file": "options_speaker_28_filled.svg"
+    },
+    {
+      "name": "options_speaker",
+      "size": 28,
+      "style": "regular",
+      "file": "options_speaker_28_regular.svg"
     },
     {
       "name": "organization",
@@ -90542,6 +90962,30 @@
       "file": "slide_add_48_regular.svg"
     },
     {
+      "name": "slide_arrow_forward",
+      "size": 20,
+      "style": "filled",
+      "file": "slide_arrow_forward_20_filled.svg"
+    },
+    {
+      "name": "slide_arrow_forward",
+      "size": 20,
+      "style": "regular",
+      "file": "slide_arrow_forward_20_regular.svg"
+    },
+    {
+      "name": "slide_arrow_forward",
+      "size": 24,
+      "style": "filled",
+      "file": "slide_arrow_forward_24_filled.svg"
+    },
+    {
+      "name": "slide_arrow_forward",
+      "size": 24,
+      "style": "regular",
+      "file": "slide_arrow_forward_24_regular.svg"
+    },
+    {
       "name": "slide_arrow_right",
       "size": 20,
       "style": "filled",
@@ -103347,6 +103791,18 @@
     },
     {
       "name": "text_bullet_list_square_clock",
+      "size": 16,
+      "style": "filled",
+      "file": "text_bullet_list_square_clock_16_filled.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
+      "size": 16,
+      "style": "regular",
+      "file": "text_bullet_list_square_clock_16_regular.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
       "size": 20,
       "style": "filled",
       "file": "text_bullet_list_square_clock_20_filled.svg"
@@ -103356,6 +103812,30 @@
       "size": 20,
       "style": "regular",
       "file": "text_bullet_list_square_clock_20_regular.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
+      "size": 24,
+      "style": "filled",
+      "file": "text_bullet_list_square_clock_24_filled.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
+      "size": 24,
+      "style": "regular",
+      "file": "text_bullet_list_square_clock_24_regular.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
+      "size": 28,
+      "style": "filled",
+      "file": "text_bullet_list_square_clock_28_filled.svg"
+    },
+    {
+      "name": "text_bullet_list_square_clock",
+      "size": 28,
+      "style": "regular",
+      "file": "text_bullet_list_square_clock_28_regular.svg"
     },
     {
       "name": "text_bullet_list_square_edit",
@@ -106550,6 +107030,18 @@
       "file": "text_number_list_ltr_24_regular.svg"
     },
     {
+      "name": "text_number_list_ltr",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_ltr_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_ltr",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_ltr_28_regular.svg"
+    },
+    {
       "name": "text_number_list_ltr_90",
       "size": 20,
       "style": "filled",
@@ -106596,6 +107088,30 @@
       "size": 24,
       "style": "regular",
       "file": "text_number_list_ltr_rotate_270_24_regular.svg"
+    },
+    {
+      "name": "text_number_list_ltr_rotate_270",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_ltr_rotate_270_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_ltr_rotate_270",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_ltr_rotate_270_28_regular.svg"
+    },
+    {
+      "name": "text_number_list_ltr_rotate_90",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_ltr_rotate_90_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_ltr_rotate_90",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_ltr_rotate_90_28_regular.svg"
     },
     {
       "name": "text_number_list_rotate_270",
@@ -106682,6 +107198,18 @@
       "file": "text_number_list_rtl_24_regular.svg"
     },
     {
+      "name": "text_number_list_rtl",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_rtl_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_rtl",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_rtl_28_regular.svg"
+    },
+    {
       "name": "text_number_list_rtl_90",
       "size": 20,
       "style": "filled",
@@ -106728,6 +107256,30 @@
       "size": 24,
       "style": "regular",
       "file": "text_number_list_rtl_rotate_270_24_regular.svg"
+    },
+    {
+      "name": "text_number_list_rtl_rotate_270",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_rtl_rotate_270_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_rtl_rotate_270",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_rtl_rotate_270_28_regular.svg"
+    },
+    {
+      "name": "text_number_list_rtl_rotate_90",
+      "size": 28,
+      "style": "filled",
+      "file": "text_number_list_rtl_rotate_90_28_filled.svg"
+    },
+    {
+      "name": "text_number_list_rtl_rotate_90",
+      "size": 28,
+      "style": "regular",
+      "file": "text_number_list_rtl_rotate_90_28_regular.svg"
     },
     {
       "name": "text_paragraph",
