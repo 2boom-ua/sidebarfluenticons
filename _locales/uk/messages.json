@@ -16,7 +16,7 @@
     "description": "Filled filter button"
   },
   "iconsCount": {
-    "message": "іконок",
+    "message": "",
     "description": "Counter label"
   },
   "noResults": {
@@ -110,5 +110,21 @@
   "noNewVersion": {
     "message": "Нової версії немає",
     "description": "Update skip toast"
+  },
+    "navUpTooltip": {
+    "message": "Вгору",
+    "description": "Navigate to top"
+  },
+  "navDownTooltip": {
+    "message": "Вниз",
+    "description": "Navigate to bottom"
+  },
+  "navPageUpTooltip": {
+    "message": "Сторінка вгору",
+    "description": "Scroll one page up"
+  },
+  "navPageDownTooltip": {
+    "message": "Сторінка вниз",
+    "description": "Scroll one page down"
   }
 }

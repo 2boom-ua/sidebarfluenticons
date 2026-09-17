@@ -16,7 +16,7 @@
     "description": "Filled filter button"
   },
   "iconsCount": {
-    "message": "icons",
+    "message": "",
     "description": "Counter label"
   },
   "noResults": {
@@ -110,5 +110,21 @@
   "noNewVersion": {
     "message": "No new version available",
     "description": "Update skip toast"
+  },
+    "navUpTooltip": {
+    "message": "Up",
+    "description": "Navigate to top"
+  },
+  "navDownTooltip": {
+    "message": "Down",
+    "description": "Navigate to bottom"
+  },
+  "navPageUpTooltip": {
+    "message": "Page Up",
+    "description": "Scroll one page up"
+  },
+  "navPageDownTooltip": {
+    "message": "Page Down",
+    "description": "Scroll one page down"
   }
 }

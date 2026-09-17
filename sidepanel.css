@@ -45,7 +45,7 @@
   --color-error: #d14578;
   --color-info: #0082a6;
   --svg-filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(0%) hue-rotate(0deg) brightness(0.88) contrast(1); 
-  --tooltip-bg: #1a1a1a;
+  --tooltip-bg: #3a3a3a;
   --tooltip-text: #e0e0e0;
   --modal-bg: #2a2a2a;
   --modal-shadow: 0 8px 32px rgba(0,0,0,0.6);
@@ -134,8 +134,21 @@ body {
 
 .filter-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-left {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+}
+
+.filter-right {
+  display: flex;
+  gap: 2px;
   align-items: center;
 }
 
@@ -157,12 +170,21 @@ body {
   font-weight: 600;
 }
 
+#navUpBtn img,
+#navPageUpBtn img,
+#navPageDownBtn img,
+#navDownBtn img,
+#updateIconsBtn img {
+  display: block;
+  filter: var(--svg-filter);
+}
+
 #counter {
   font-size: 13px;
   font-weight: 500;
   color: var(--color-textSecondary);
-  margin-top: 2px;
-  margin-left: auto;
+  white-space: nowrap;
+  top: -2px;
 }
 
 .update-btn {
@@ -196,6 +218,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
+  padding-right: 8px;
   align-content: start;
 }
 
@@ -204,12 +227,23 @@ body {
   overflow-y: auto;
   min-height: 0;
   padding-bottom: 10px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 #scrollArea::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+
+#scrollArea::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+#scrollArea::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+#scrollArea::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border);
 }
 
 .icon-card {
@@ -354,7 +388,8 @@ body {
   border-radius: 8px;
 }
 
-#modalContent .detail-preview img {
+#modalContent .detail-preview img,
+#modalContent .detail-preview svg {
   display: block;
   filter: var(--svg-filter);
   transform-origin: center;
@@ -577,6 +612,15 @@ body {
 
 .toast.visible {
   opacity: 1;
+}
+
+.icon-card .preview-wrap svg.icon-sprite {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+  color: var(--color-text);
+  filter: var(--svg-filter);
 }
 
 /* FOOTER */

@@ -6,7 +6,7 @@ const path = require('path');
 
 const PACKAGE_DIR = path.join(__dirname, '..', 'node_modules', '@fluentui', 'svg-icons', 'icons');
 const OUTPUT_FILE = path.join(__dirname, '..', 'data', 'icons.json');
-const VERSION = '1.1.339';
+const VERSION = '1.1.341';
 
 function parseFilename(filename) {
   const match = filename.match(/^(.+)_(\d+)_(regular|filled)\.svg$/);
