@@ -11,7 +11,6 @@ let searchQuery = '';
 let detailData = null;
 let spriteInjected = false;
 let spriteSymbolIds = null;
-let spriteRawText = null;
 
 const gridEl = document.getElementById('grid');
 const modalOverlay = document.getElementById('modalOverlay');
@@ -74,6 +73,10 @@ function normalizeName(name) {
 function getPreferredSize(sizes) {
   if (sizes.includes(24)) return 24;
   const sorted = [...sizes].sort((a, b) => a - b);
+  const lessOrEqual = sorted.filter(s => s < 24);
+  if (lessOrEqual.length > 0) {
+    return lessOrEqual[lessOrEqual.length - 1];
+  }
   return sorted[0] || 24;
 }
 
@@ -220,31 +223,8 @@ function injectSprite(spriteText) {
   container.innerHTML = spriteText;
   document.body.appendChild(container);
 
-  spriteRawText = spriteText;
   spriteSymbolIds = parseSpriteSymbolIds(spriteText);
   spriteInjected = true;
-}
-
-function getSymbolSvg(symbolId) {
-  if (!spriteRawText) return null;
-
-  const escapedId = symbolId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`<symbol\\s+id="${escapedId}"[^>]*>([\\s\\S]*?)<\\/symbol>`, 'i');
-  const match = spriteRawText.match(regex);
-  if (!match) return null;
-
-  const fullSymbolTag = spriteRawText.match(new RegExp(`<symbol\\s+id="${escapedId}"[^>]*>`, 'i'));
-  let viewBox = '0 0 24 24';
-  if (fullSymbolTag) {
-    const vbMatch = fullSymbolTag[0].match(/viewBox="([^"]*)"/i);
-    if (vbMatch) {
-      viewBox = vbMatch[1];
-    }
-  }
-
-  const inner = match[1];
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="${viewBox}">${inner}</svg>`;
 }
 
 function getFilteredIcons(icons) {
@@ -308,8 +288,7 @@ function closeModal() {
 }
 
 function openModal(name, style, sizes, detailUrl, previewSize) {
-  const defaultSize = 24;
-  const selectedSize = sizes.includes(defaultSize) ? defaultSize : sizes[0];
+  const selectedSize = getPreferredSize(sizes);
   
   detailData = { name, style, sizes, url: detailUrl, previewSize };
   modalOverlay.classList.remove('hidden');
@@ -321,19 +300,9 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
     sizeButtonsHtml += `<button class="size-btn ${activeClass}" data-size="${s}">${s}</button>`;
   }
   
-  const symbolId = `ic_fluent_${name}_24_${style}`;
-  const spriteSvg = (selectedSize === 24) ? getSymbolSvg(symbolId) : null;
-
-  let previewHtml;
-  if (spriteSvg) {
-    previewHtml = spriteSvg;
-  } else {
-    previewHtml = `<img src="${detailUrl}" alt="${name}" onerror="this.parentElement.innerHTML='<div class=\\'detail-error\\'>${_('failedLoad')}</div>';" />`;
-  }
-
   modalContent.innerHTML = `
     <div class="detail-preview">
-      ${previewHtml}
+      <img src="${detailUrl}" alt="${name}" onerror="this.parentElement.innerHTML='<div class=\\'detail-error\\'>${_('failedLoad')}</div>';" />
     </div>
     <div class="detail-name">${normalizeName(name).replace(/\b\w/g, c => c.toUpperCase())}</div>
     <div class="detail-style">${style.charAt(0).toUpperCase() + style.slice(1)}</div>
@@ -366,8 +335,8 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
     }
   });
 
-  const previewEl = modalContent.querySelector('.detail-preview img, .detail-preview svg');
-  if (previewEl) {
+  const previewImg = modalContent.querySelector('.detail-preview img');
+  if (previewImg) {
     const targetSize = 56;
     let originalSize;
     if (sizes.includes(24)) {
@@ -381,7 +350,7 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
       }
     }
     const scale = targetSize / originalSize;
-    previewEl.style.transform = `scale(${scale})`;
+    previewImg.style.transform = `scale(${scale})`;
   }
 
   let currentSelectedSize = selectedSize;
@@ -516,22 +485,6 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
   exportBgBtn.addEventListener('mouseleave', hideTooltip);
 
   copyBtn.addEventListener('click', function() {
-    const symbolId = `ic_fluent_${name}_${currentSelectedSize}_${style}`;
-
-    if (currentSelectedSize === 24) {
-      const spriteSvg = getSymbolSvg(symbolId);
-      if (spriteSvg) {
-        navigator.clipboard.writeText(spriteSvg)
-          .then(() => {
-            showToast(_('copied'), 'success');
-          })
-          .catch(err => {
-            showToast(_('copyFailed') + err.message, 'error');
-          });
-        return;
-      }
-    }
-
     const filename = `${name}_${currentSelectedSize}_${style}.svg`;
     const url = CDN_BASE + filename;
     
@@ -554,27 +507,8 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
   });
 
   downloadBtn.addEventListener('click', function() {
-    const symbolId = `ic_fluent_${name}_${currentSelectedSize}_${style}`;
-    const saveFilename = `ic_fluent_${name}_${currentSelectedSize}_${style}.svg`;
-
-    if (currentSelectedSize === 24) {
-      const spriteSvg = getSymbolSvg(symbolId);
-      if (spriteSvg) {
-        const blob = new Blob([spriteSvg], { type: 'image/svg+xml' });
-        const blobUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = saveFilename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(blobUrl);
-        showToast(_('downloaded'), 'success');
-        return;
-      }
-    }
-
     const cdnFilename = `${name}_${currentSelectedSize}_${style}.svg`;
+    const saveFilename = `ic_fluent_${name}_${currentSelectedSize}_${style}.svg`;
     const url = CDN_BASE + cdnFilename;
     
     showToast(_('downloading'), 'info');
@@ -615,24 +549,6 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
   });
 
   exportBgBtn.addEventListener('click', function() {
-    const symbolId = `ic_fluent_${name}_${currentSelectedSize}_${style}`;
-
-    if (currentSelectedSize === 24) {
-      const spriteSvg = getSymbolSvg(symbolId);
-      if (spriteSvg) {
-        const base64 = btoa(unescape(encodeURIComponent(spriteSvg)));
-        const css = `background-image: url(data:image/svg+xml;base64,${base64});`;
-        navigator.clipboard.writeText(css)
-          .then(() => {
-            showToast(_('copied'), 'success');
-          })
-          .catch(err => {
-            showToast(_('copyFailed') + err.message, 'error');
-          });
-        return;
-      }
-    }
-
     const filename = `${name}_${currentSelectedSize}_${style}.svg`;
     const url = CDN_BASE + filename;
     
