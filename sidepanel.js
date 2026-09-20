@@ -312,10 +312,10 @@ function openModal(name, style, sizes, detailUrl, previewSize) {
     </div>
     <div class="detail-actions">
       <button class="copy-btn" data-i18n-tooltip="copySvg">
-        <img src="icons/copy_24_regular.svg" width="20" height="20" alt="Copy" />
+        <img src="icons/ic_fluent_copy_24_regular.svg" width="20" height="20" alt="Copy" />
       </button>
       <button class="download-btn" data-i18n-tooltip="downloadSvg">
-        <img src="icons/arrow_download_24_regular.svg" width="20" height="20" alt="Download" />
+        <img src="icons/ic_fluent_arrow_download_24_regular.svg" width="20" height="20" alt="Download" />
       </button>
       <button class="webfont-btn" data-i18n-tooltip="useAsFont">
         <img src="icons/ic_fluent_text_font_24_regular.svg" width="20" height="20" alt="Webfont" />
